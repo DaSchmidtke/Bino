@@ -3,20 +3,14 @@ library(shiny)
 ui <- fluidPage(
   
   sliderInput(inputId = "leftHand",
-               label = "Number of food items grasped with the left hand",
+               label = "Number of successful events",
                value = 100, min = 0, max = 300, width = "100%", step = 1),
   sliderInput(inputId = "totalEvents",
-               label = "Total number of grasping events",
+               label = "Total number of events",
                value = 200, min = 0, max = 300, width = "100%", step = 1),
   sliderInput(inputId = "probability",
-               label = "Probability",
+               label = "Expected probability",
                value = 0.5, min = 0, max = 1, step = 0.1, width = "100%"),
-  #sliderInput(inputId = "rightHand",
-  #            label = "Number of food items grasped with the right hand",
-  #            min = 0,
-  #            max = 500,
-  #            width = "100%",
-  #            value = 100),
   uiOutput(outputId = "binomialPvalue"),
   plotOutput(outputId = "hist"))
 
